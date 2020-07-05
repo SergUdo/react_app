@@ -1,15 +1,16 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./styles.css";
 
 const App = () => {
-  const [contacts, setContacts] = React.useState([]);
+  const [contacts, setContacts] = useState([]);
 
-fetch("https://randomuser.me/api/?results=3")
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    setContacts(data.results);
-  });
+  useEffect(() => {
+    fetch("https://randomuser.me/api/?results=3")
+      .then(response => response.json())
+      .then(data => {
+        setContacts(data.results);
+      });
+  }, []);
 
   return (
     <>
@@ -25,9 +26,8 @@ fetch("https://randomuser.me/api/?results=3")
   );
 };
 
-
 const ContactCard = props => {
-  const [showAge, setShowAge] = React.useState(false);
+  const [showAge, setShowAge] = useState(false);
 
   return (
     <div className="contact-card">
