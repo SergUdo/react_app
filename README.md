@@ -69,4 +69,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ### Example 
 
-Fixed bugs in article: https://jschris.com/getting-started-with-react
+I'm using the article: https://jschris.com/getting-started-with-react
